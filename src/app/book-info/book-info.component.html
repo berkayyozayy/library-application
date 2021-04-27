@@ -1,1 +1,25 @@
-<p>book-info works!</p>
+<div class="row">
+  <div class="col-5">
+    <form [formGroup]="this.bookService.form">
+      <input type="hidden" formControlName="$key" />
+      <div class="form-group">
+        <label>Book Name</label>
+        <input formControlName="bookName" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Book Genre</label>
+        <input formControlName="bookGenre" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <input formControlName="author" class="form-control" />
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit" />
+      </div>
+    </form>
+  </div>
+  <div class="col-7">
+    <app-book-list></app-book-list>
+  </div>
+</div>

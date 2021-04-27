@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { BookListComponent } from './book-list/book-list.component';
 
+import { ReactiveFormsModule} from '@angular/forms'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { BookListComponent } from './book-list/book-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
