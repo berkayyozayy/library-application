@@ -19,13 +19,16 @@ export class BookInfoComponent implements OnInit {
 
   onSubmit() {
     this.isSubmit = true
-    if (this.bookService.form.get('$key').value == null) {
-      this.bookService.insertBook(this.bookService.form.value)
-      this.showSuccessMessage = true
-      this.clearInputs()
-      setTimeout(() => this.showSuccessMessage = false, 3000)
-      this.isSubmit = false
+    if (this.bookService.form.valid) {
+      if (this.bookService.form.get('$key').value == null) {
+        this.bookService.insertBook(this.bookService.form.value)
+        this.showSuccessMessage = true
+        this.clearInputs()
+        setTimeout(() => this.showSuccessMessage = false, 3000)
+        this.isSubmit = false
+      }
     }
+    
   }
 
   clearInputs() {
