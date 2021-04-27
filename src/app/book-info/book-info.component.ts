@@ -18,7 +18,8 @@ export class BookInfoComponent implements OnInit {
 
   onSubmit() {
     this.isSubmit = true
-    if (this.bookService.form.valid) {
+    if (this.bookService.form.get('$key').value == null) {
+      this.bookService.insertBook(this.bookService.form.value)
       this.isSubmit = false
     }
   }
