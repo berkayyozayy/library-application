@@ -8,9 +8,19 @@ import { BookService } from '../shared/book.service'
 })
 export class BookInfoComponent implements OnInit {
 
+  isSubmit: boolean
+  formControls = this.bookService.form.controls
+
   constructor(public bookService: BookService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    this.isSubmit = true
+    if (this.bookService.form.valid) {
+      this.isSubmit = false
+    }
   }
 
 }
