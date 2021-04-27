@@ -3,6 +3,14 @@
     <form [formGroup]="this.bookService.form">
       <input type="hidden" formControlName="$key" />
       <div class="form-group">
+        <label>Username</label>
+        <input formControlName="username" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input formControlName="email" class="form-control" />
+      </div>
+      <div class="form-group">
         <label>Book Name</label>
         <input formControlName="bookName" class="form-control" />
       </div>

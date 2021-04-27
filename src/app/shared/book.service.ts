@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms'
+import { FormGroup, FormControl, Validators} from '@angular/forms'
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +8,9 @@ export class BookService {
   constructor() { }
   form = new FormGroup({
     $key: new FormControl(null),
-    bookName: new FormControl(''),
+    username: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.email),
+    bookName: new FormControl('', Validators.required),
     bookGenre: new FormControl(''),
     author: new FormControl('')
   })
