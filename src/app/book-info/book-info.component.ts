@@ -22,6 +22,7 @@ export class BookInfoComponent implements OnInit {
     if (this.bookService.form.get('$key').value == null) {
       this.bookService.insertBook(this.bookService.form.value)
       this.showSuccessMessage = true
+      setTimeout(() => this.showSuccessMessage = false, 3000)
       this.isSubmit = false
     }
   }
