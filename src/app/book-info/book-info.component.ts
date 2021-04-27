@@ -9,6 +9,7 @@ import { BookService } from '../shared/book.service'
 export class BookInfoComponent implements OnInit {
 
   isSubmit: boolean
+  showSuccessMessage: boolean
   formControls = this.bookService.form.controls
 
   constructor(public bookService: BookService) { }
@@ -20,6 +21,7 @@ export class BookInfoComponent implements OnInit {
     this.isSubmit = true
     if (this.bookService.form.get('$key').value == null) {
       this.bookService.insertBook(this.bookService.form.value)
+      this.showSuccessMessage = true
       this.isSubmit = false
     }
   }
