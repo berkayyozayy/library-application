@@ -10,6 +10,7 @@ export class BookListComponent implements OnInit {
 
   arr = []
   showDeleteMessage: boolean
+  searchText: string = ""
 
   constructor(private bookService: BookService) { }
 
@@ -30,5 +31,13 @@ export class BookListComponent implements OnInit {
       this.showDeleteMessage = true
       setTimeout(() => this.showDeleteMessage = false, 3000)
     }
-  }  
+  }
+  
+  clearSearchInput() {
+    this.searchText = ""
+  }
+
+  filterTable(infos) {
+    return infos.username.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1
+  }
 }

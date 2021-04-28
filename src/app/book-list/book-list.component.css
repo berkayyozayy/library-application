@@ -5,3 +5,11 @@
 .btn-outline-danger {
   margin-left: 5px;
 }
+
+.form-inline {
+  margin-bottom: 16px;
+}
+
+.btn-outline-danger {
+  margin-left: 8px;
+}
