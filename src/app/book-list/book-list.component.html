@@ -17,7 +17,13 @@
         <td>{{ infos.bookGenre }}</td>
         <td>{{ infos.author }}</td>
         <td class="table__buttons">
-          <button class="btn btn-outline-info btn-sm">Edit</button>
+          <button
+            type="button"
+            class="btn btn-outline-info btn-sm"
+            (click)="bookService.populateForm(infos)"
+          >
+            Edit
+          </button>
           <button
             type="button"
             class="btn btn-outline-danger btn-sm"

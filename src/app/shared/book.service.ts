@@ -37,4 +37,18 @@ export class BookService {
   deleteBook($key: string) {
     this.bookList.remove($key)
   }
+
+  populateForm(infos) {
+    this.form.setValue(infos)
+  }
+
+  updateInfos(infos) {
+    this.bookList.update(infos.$key, {
+      username: infos.username,
+      email: infos.email,
+      bookName: infos.bookName,
+      bookGenre: infos.bookGenre,
+      author: infos.author
+    })
+  }
 }
