@@ -1,1 +1,66 @@
-<p>book-info works!</p>
+<div class="row">
+  <div class="col-4">
+    <form [formGroup]="this.bookService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key" />
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          formControlName="username"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': isSubmit && formControls.username.errors }"
+        />
+        <div
+          class="invalid-message"
+          *ngIf="isSubmit && formControls.username.errors"
+        >
+          This field is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': isSubmit && formControls.email.errors }"
+        />
+        <div
+          class="invalid-message"
+          *ngIf="isSubmit && formControls.email.errors"
+        >
+          Invalid email address!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Book Name</label>
+        <input
+          formControlName="bookName"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': isSubmit && formControls.bookName.errors }"
+        />
+        <div
+          class="invalid-message"
+          *ngIf="isSubmit && formControls.email.errors"
+        >
+          Book name is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Book Genre</label>
+        <input formControlName="bookGenre" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <input formControlName="author" class="form-control" />
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit" />
+      </div>
+    </form>
+    <div class="alert alert-info" *ngIf="showSuccessMessage">
+      Informations added Successfully!
+    </div>
+  </div>
+  <div class="col-8">
+    <app-book-list></app-book-list>
+  </div>
+</div>
