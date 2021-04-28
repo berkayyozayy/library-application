@@ -1,1 +1,22 @@
-<p>book-list works!</p>
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Book Genre</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let infos of arr">
+      <tr>
+        <th>{{ infos.username }}</th>
+        <th>{{ infos.email }}</th>
+        <th>{{ infos.bookName }}</th>
+        <th>{{ infos.bookGenre }}</th>
+        <th>{{ infos.author }}</th>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
