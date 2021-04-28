@@ -27,8 +27,8 @@ export class BookListComponent implements OnInit {
   onDelete($key) {
     if (confirm('Are you sure to delete this record?')) {
       this.bookService.deleteBook($key)
+      this.showDeleteMessage = true
+      setTimeout(() => this.showDeleteMessage = false, 3000)
     }
-  }
-
-  
+  }  
 }
