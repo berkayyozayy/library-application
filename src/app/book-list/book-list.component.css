@@ -1,0 +1,7 @@
+.table__buttons {
+  display: flex;
+}
+
+.btn-outline-danger {
+  margin-left: 5px;
+}
