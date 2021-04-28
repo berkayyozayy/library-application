@@ -1,35 +1,81 @@
-<div class="container">
-  <div class="row justify-content-center p-4">
-    <div class="col-md-6">
-      <form>
-        <h3>Register</h3>
-        <div class="form-group p-2">
+<p>register works!</p>
+<div class="row mt-4">
+  <div class="col-12">
+    <h4>User Registration</h4>
+  </div>
+
+  <div class="col-12">
+    <div class="row" *ngIf="authError">
+      <div class="col-12 alert alert-danger">
+        {{ authError?.message }}
+      </div>
+    </div>
+    <form #userRegForm="ngForm">
+      <div class="row">
+        <div class="col-md-6 mb-2">
+          <label for="firstName">First name</label>
           <input
-            type="email"
+            ngModel
+            #firstname="ngModel"
+            name="firstName"
+            type="text"
+            class="form-control"
+            id="firstName"
+          />
+        </div>
+        <div class="col-md-6 mb-2">
+          <label for="lastName">Last name</label>
+          <input
+            ngModel
+            #lastname="ngModel"
+            name="lastName"
+            type="text"
+            class="form-control"
+            id="lastName"
+            value=""
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <label for="email">Email</label>
+          <input
+            ngModel
+            #email="ngModel"
             name="email"
+            type="email"
             class="form-control"
-            [(ngModel)]="email"
-            placeholder="Email"
-            required
           />
         </div>
-        <div class="form-group p-2">
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            [(ngModel)]="password"
-            placeholder="Password"
-            required
-          />
-        </div>
-        <div class="form-group p-2">
-          <button type="submit" class="btn btn-primary">Register</button>
-          <div class="register">
-            <a href="#" routerLink="/login">Back To Login</a>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <label for="password">Password</label>
+            <input
+              ngModel
+              #password="ngModel"
+              name="password"
+              type="password"
+              class="form-control"
+            />
           </div>
         </div>
-      </form>
-    </div>
+        <div class="row">
+          <div class="col-md-12 mb-2">
+            <label>Confirm Password</label>
+            <input name="password" type="password" class="form-control" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+          <div class="col-12">
+            <a href="/login">Click here to login</a>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
