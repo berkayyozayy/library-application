@@ -16,6 +16,16 @@
         <td>{{ infos.bookName }}</td>
         <td>{{ infos.bookGenre }}</td>
         <td>{{ infos.author }}</td>
+        <td class="table__buttons">
+          <button class="btn btn-outline-info btn-sm">Edit</button>
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-sm"
+            (click)="onDelete(infos.$key)"
+          >
+            Delete
+          </button>
+        </td>
       </tr>
     </ng-container>
   </tbody>

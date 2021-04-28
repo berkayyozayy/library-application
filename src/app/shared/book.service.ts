@@ -33,4 +33,8 @@ export class BookService {
       author: book.author
     })
   }
+
+  deleteBook($key: string) {
+    this.bookList.remove($key)
+  }
 }

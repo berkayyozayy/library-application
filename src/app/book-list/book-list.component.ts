@@ -9,6 +9,7 @@ import { BookService } from '../shared/book.service'
 export class BookListComponent implements OnInit {
 
   arr = []
+  showDeleteMessage: boolean
 
   constructor(private bookService: BookService) { }
 
@@ -22,4 +23,12 @@ export class BookListComponent implements OnInit {
       })
     })
   }
+
+  onDelete($key) {
+    if (confirm('Are you sure to delete this record?')) {
+      this.bookService.deleteBook($key)
+    }
+  }
+
+  
 }
