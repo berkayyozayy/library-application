@@ -24,13 +24,13 @@ export class BookService {
     return this.bookList.snapshotChanges()
   }
 
-  insertBook(book) {
+  insertBook(infos) {
     this.bookList.push({
-      username: book.username,
-      email: book.email,
-      bookName: book.bookName,
-      bookGenre: book.bookGenre,
-      author: book.author
+      username: infos.username,
+      email: infos.email,
+      infosName: infos.bookName,
+      bookGenre: infos.bookGenre,
+      author: infos.author
     })
   }
 
