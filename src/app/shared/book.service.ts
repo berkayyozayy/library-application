@@ -28,7 +28,7 @@ export class BookService {
     this.bookList.push({
       username: infos.username,
       email: infos.email,
-      infosName: infos.bookName,
+      bookName: infos.bookName,
       bookGenre: infos.bookGenre,
       author: infos.author
     })
